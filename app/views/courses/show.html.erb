@@ -1,0 +1,63 @@
+<section class="section">
+  <div class="container">
+    <div class="columns is-hidden-tablet is-hidden-desktop">
+      <div class="column">
+        <a href="/" class="button is-primary">Back To Dashboard</a>
+      </div>
+    </div>
+    <div class="columns is-mobile">
+      <div class="column">
+        <h1 class="title"><%= @course.student.name %></h1>
+      </div>
+      <div class="column">
+        <a href="/" class="button is-primary is-pulled-right is-hidden-mobile">Back To Dashboard</a>
+      </div>
+    </div>
+    <div class="columns">
+      <div class="column">
+          <h2 class="title"><%= @course.name %></h2>
+          <% if @course.average > 0.0 %>
+            <h2 class="subtitle">Average: <%= @course.average %> (<%= @course.grade %>) - Last Update: <%= @course.last_update_formatted %></h2>
+            <progress class="progress <%= @course.health_bar_color_class %> is-large" value="<%= @course.average %>" max="100"><%= @course.average %></progress>
+          <% else %>
+            <h2 class="subtitle">Course has no average.</h2>
+          <% end %>
+
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <table class="table is-fullwidth">
+          <thead>
+            <tr>
+              <th>Assignment</th>
+              <th>Due Date</th>
+              <th>Date Assigned</th>
+              <th>Category</th>
+              <th>Score</th>
+              <th>Total Points</th>
+              <th>Average</th>
+              <th>Grade</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @course.assignments.order('due_date DESC').each do |assignment| %>
+              <tr>
+                <td><%= assignment.name %></td>
+                <td><%= assignment.due_date_formatted %></td>
+                <td><%= assignment.date_assigned_formatted %></td>
+                <td><%= assignment.category %></td>
+                <td><%= assignment.score %></td>
+                <td><%= assignment.total_points %></td>
+                <td><%= assignment.average %></td>
+                <td><%= assignment.grade %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>

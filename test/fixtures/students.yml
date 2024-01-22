@@ -1,0 +1,6 @@
+DEFAULTS: &DEFAULTS
+  student_id: <%= Faker::Alphanumeric.alphanumeric(number: 20) %>
+  name: <%= Faker::Name.name %>
+
+random:
+  <<: *DEFAULTS

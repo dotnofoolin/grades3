@@ -1,0 +1,8 @@
+DEFAULTS: &DEFAULTS
+  name: <%= Faker::Educator.course_name %>
+  average: <%= Faker::Number.within(range: 0.0..100.0) %>
+  last_update: <%= Faker::Date.in_date_period(month: 2) %>
+
+random:
+  student: random
+  <<: *DEFAULTS
