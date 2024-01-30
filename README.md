@@ -33,5 +33,26 @@ A key component is the [hac_adapter](https://github.com/dotnofoolin/hac_adapter)
 * Run `bin/dev` to run the rails server.
   
 ## Testing
+
 * Test are written in Minitest and use vanilla fixtures. The `faker` gem populates the fixtures with random data.
 * Run `rails test:all` to run the tests, including the system tests.
+
+## Deployment
+
+* `kamal setup` and `kamal deploy`
+* I also have my logs writing to disk, and a Docker volume mounted to `/log` in the EC2 instance so that the logs persist between deploys.
+* I created a custom logrotate config for these logs, too:
+  ```
+  ubuntu@host:~$ cat /etc/logrotate.d/grades3
+  "/log/*.log" {
+    create 644 ubuntu ubuntu
+    daily
+    rotate 7
+    missingok
+    compress
+    delaycompress
+    notifempty
+    copytruncate
+    sharedscripts
+  }
+  ```
