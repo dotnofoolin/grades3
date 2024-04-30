@@ -8,7 +8,7 @@ image: dotnofoolin/grades3
 servers:
   web:
     hosts:
-      - 54.156.53.204
+      - 35.168.15.9
     labels:
       traefik.http.routers.domain.entrypoints: websecure
       traefik.http.routers.domain.rule: Host(`grades.joshrburks.com`)
@@ -73,7 +73,7 @@ ssh:
 builder:
   remote:
     arch: amd64
-    host: ssh://ubuntu@54.156.53.204
+    host: ssh://ubuntu@35.168.15.9
 
 # According to database.yml, our SQLite database lives in the storage directory. Mount a volume so we can persist it.
 # TODO: try this with logs, too.
