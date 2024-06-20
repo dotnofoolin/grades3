@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby '~> 3.3' # if this changes, change .ruby-version as well
+ruby '~> 3.3' # If this changes, change .ruby-version and Dockerfile, too
 
 gem "rails", "~> 7.1.3"
 gem "propshaft"
