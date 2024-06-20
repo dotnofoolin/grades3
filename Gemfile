@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby file: ".ruby-version"
+ruby '~> 3.3' # if this changes, change .ruby-version as well
 
 gem "rails", "~> 7.1.3"
 gem "propshaft"

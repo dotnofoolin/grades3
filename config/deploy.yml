@@ -8,7 +8,7 @@ image: dotnofoolin/grades3
 servers:
   web:
     hosts:
-      - 35.168.15.9
+      - 54.166.201.187
     labels:
       traefik.http.routers.domain.entrypoints: websecure
       traefik.http.routers.domain.rule: Host(`grades.joshrburks.com`)
@@ -70,10 +70,10 @@ ssh:
 # Just build on the server for now. Doing it locally has a bug with ruby 3.3.0.
 # ERROR: failed to solve: process "/bin/sh -c SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile" did not complete successfully: exit code: 139
 # https://github.com/basecamp/kamal/issues/624
-builder:
-  remote:
-    arch: amd64
-    host: ssh://ubuntu@35.168.15.9
+#builder:
+#  remote:
+#    arch: amd64
+#    host: ssh://ubuntu@54.166.201.187
 
 # According to database.yml, our SQLite database lives in the storage directory. Mount a volume so we can persist it.
 # TODO: try this with logs, too.
