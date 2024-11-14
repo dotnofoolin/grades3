@@ -1,8 +1,8 @@
 source "https://rubygems.org"
 
-ruby '~> 3.3' # If this changes, change .ruby-version and Dockerfile, too
+ruby "~> 3.3" # If this changes, change .ruby-version and Dockerfile, too
 
-gem "rails", "~> 7.1.3"
+gem "rails", "~> 7.2"
 gem "propshaft"
 gem "sqlite3", "~> 1.4"
 gem "puma", ">= 5.0"
