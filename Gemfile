@@ -14,6 +14,7 @@ gem "jbuilder"
 gem "bootsnap", require: false
 gem "hac_adapter", "1.3.0", git: "https://github.com/dotnofoolin/hac_adapter.git"
 gem "rufus-scheduler"
+gem "thruster"
 
 group :development, :test do
   gem "debug", platforms: %i[ mri windows ]
