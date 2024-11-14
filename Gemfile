@@ -2,10 +2,10 @@ source "https://rubygems.org"
 
 ruby "~> 3.3" # If this changes, change .ruby-version and Dockerfile, too
 
-gem "rails", "~> 7.2"
+gem "rails", "~> 8.0"
 gem "propshaft"
-gem "sqlite3", "~> 1.4"
-gem "puma", ">= 5.0"
+gem "sqlite3"
+gem "puma"
 gem "jsbundling-rails"
 gem "turbo-rails"
 gem "stimulus-rails"
